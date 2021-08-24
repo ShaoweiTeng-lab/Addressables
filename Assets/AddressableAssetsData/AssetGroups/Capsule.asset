@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Capsule
+  m_EditorClassIdentifier: 
+  m_GroupName: Capsule
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b1f8ccf5d6bbb80499d519d2bfc09e97
+  m_SerializeEntries:
+  - m_GUID: 7d1cb99279e06544eb5282d803207d6a
+    m_Address: Assets/AddressableAssetsData/AssetGroups/Capsule.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Capsule
+    m_MainAsset: {fileID: 8214640680890962792, guid: 7d1cb99279e06544eb5282d803207d6a,
+      type: 3}
+    m_TargetAsset: {fileID: 8214640680890962792, guid: 7d1cb99279e06544eb5282d803207d6a,
+      type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: db57d40281168114982ad985f866c991, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9de9fe07304d6354a872378e6e3fb1de, type: 2}
+    - {fileID: 11400000, guid: 92e9030d86f6bbb4aa9ee6540d91ee8a, type: 2}
