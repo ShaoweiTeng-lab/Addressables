@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 //https://www.youtube.com/watch?v=0tFnqBdO7NY
 //https://z0935323866.medium.com/unity-%E5%B0%8B%E5%9D%80%E5%BC%8F%E8%B3%87%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1addressable-assets-system-%E4%B8%80-bb1e99014a88
+//https://zhuanlan.zhihu.com/p/94572467
 /*
 BuildTarget : 要建立的平台位置，這裡基本上不用到到，它會自動根據我們在BuildSetting設定的平台建立相對應的資料夾。
 LocalBuildPath、LocalLoadPath : 在本地端要儲存與載入的路徑。
@@ -22,7 +23,7 @@ public class Manager : MonoBehaviour
     string AddressNameStr;
     [SerializeField] AssetReference assetobject;
     [SerializeField] AssetLabelReference assetLabelobject;//所有label一致的物件
-    GameObject assetObj;
+    [SerializeField] GameObject assetObj;
     
     bool isLoadSucc;
     //流程 : 異步加載資源 Completed， 
@@ -38,7 +39,9 @@ public class Manager : MonoBehaviour
         //assetobject.LoadAssetAsync<GameObject>().Completed += OnAssetObjLoaded;//當前資源載完執行 
 
         //AssetLabelReference 方式
-        Addressables.LoadAssetAsync<GameObject>(assetLabelobject).Completed += OnAssetObjLoaded;
+        //Addressables.LoadAssetAsync<GameObject>(assetLabelobject).Completed += OnAssetObjLoaded;
+        //使用 async
+        AsyncInstanctiate();
         LoadObjBtn.onClick.AddListener(CreateObjBtn);
     }
 
@@ -59,8 +62,19 @@ public class Manager : MonoBehaviour
     void CreateObjBtn()
     {
         Vector3 pos = new Vector3(Random.Range(5, -5), Random.Range(4, -4), 0);
-        Instantiate(assetObj, pos, Quaternion.identity);//使用url 或label
+        var obj= Instantiate(assetObj, pos, Quaternion.identity);//使用url 或label
+        obj.GetComponent<Attack>().Atk();
         //assetobject.Instantiate(pos, Quaternion.identity);//AssetReference內部加載
          
+    }
+    async void AsyncInstanctiate()
+    {
+        assetObj = await assetobject.LoadAssetAsync<GameObject>().Task ;
+        LoadObjBtn.interactable = true;
+
+        isLoadSucc = true;//判斷加載結束
+        
+
+
     }
 }

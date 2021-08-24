@@ -26,12 +26,6 @@ MonoBehaviour:
       type: 3}
     m_TargetAsset: {fileID: 3791319253761782217, guid: 704dfa7dbfa374c4c97507fcb49cc33a,
       type: 3}
-  - m_GUID: 3b136ab1a4ef0e44c90b2e8911e8b879
-    m_Address: Assets/AddressableAssetsData/AssetGroups/New Material.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 2100000, guid: 3b136ab1a4ef0e44c90b2e8911e8b879, type: 2}
-    m_TargetAsset: {fileID: 2100000, guid: 3b136ab1a4ef0e44c90b2e8911e8b879, type: 2}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: db57d40281168114982ad985f866c991, type: 2}
   m_SchemaSet:

@@ -394,11 +394,12 @@ MonoBehaviour:
   LoadObjBtn: {fileID: 1908660181}
   AddressNameStr: ' '
   assetobject:
-    m_AssetGUID: 704dfa7dbfa374c4c97507fcb49cc33a
+    m_AssetGUID: 
     m_SubObjectName: 
     m_SubObjectType: 
   assetLabelobject:
     m_LabelString: default
+  assetObj: {fileID: 0}
 --- !u!4 &1571176568
 Transform:
   m_ObjectHideFlags: 0
