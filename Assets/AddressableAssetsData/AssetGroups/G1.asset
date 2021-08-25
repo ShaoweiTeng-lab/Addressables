@@ -15,20 +15,27 @@ MonoBehaviour:
   m_GroupName: G1
   m_Data:
     m_SerializedData: []
-  m_GUID: 787549cec2f4b9a4fa4504a0f7cc0155
+  m_GUID: 76802f3226726ab4f9cbd90a49879728
   m_SerializeEntries:
-  - m_GUID: 704dfa7dbfa374c4c97507fcb49cc33a
-    m_Address: Assets/AddressableAssetsData/AssetGroups/G1Prefab.prefab
+  - m_GUID: 4559d2bca6362bd4880d8aaefa53d1fa
+    m_Address: Assets/AddressableAssetsData/AssetGroups/Perfab.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
-    m_MainAsset: {fileID: 3791319253761782217, guid: 704dfa7dbfa374c4c97507fcb49cc33a,
+    m_MainAsset: {fileID: 5489314560960196414, guid: 4559d2bca6362bd4880d8aaefa53d1fa,
       type: 3}
-    m_TargetAsset: {fileID: 3791319253761782217, guid: 704dfa7dbfa374c4c97507fcb49cc33a,
+    m_TargetAsset: {fileID: 5489314560960196414, guid: 4559d2bca6362bd4880d8aaefa53d1fa,
       type: 3}
+  - m_GUID: 3b136ab1a4ef0e44c90b2e8911e8b879
+    m_Address: G1Material
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - cgMaterial
+    m_MainAsset: {fileID: 2100000, guid: 3b136ab1a4ef0e44c90b2e8911e8b879, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: 3b136ab1a4ef0e44c90b2e8911e8b879, type: 2}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: db57d40281168114982ad985f866c991, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 95ec6f48a5de4254b9338c14dd33b735, type: 2}
-    - {fileID: 11400000, guid: fd179ea02beee6949b5736b7e9e08383, type: 2}
+    - {fileID: 11400000, guid: 73d14543dfaaf34448b84634612fbe70, type: 2}
+    - {fileID: 11400000, guid: eeb0fa50c402b2544ae7be818432e2fc, type: 2}

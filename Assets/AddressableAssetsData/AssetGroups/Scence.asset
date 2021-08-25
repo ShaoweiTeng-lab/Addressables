@@ -10,25 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Capsule
+  m_Name: Scence
   m_EditorClassIdentifier: 
-  m_GroupName: Capsule
+  m_GroupName: Scence
   m_Data:
     m_SerializedData: []
-  m_GUID: b1f8ccf5d6bbb80499d519d2bfc09e97
+  m_GUID: 8720212928198d340ad83afbd4e18648
   m_SerializeEntries:
-  - m_GUID: 7d1cb99279e06544eb5282d803207d6a
-    m_Address: Assets/AddressableAssetsData/AssetGroups/Capsule.prefab
+  - m_GUID: 182d1997ddaa448438e5aa90e45ef77f
+    m_Address: G2
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Capsule
-    m_MainAsset: {fileID: 8214640680890962792, guid: 7d1cb99279e06544eb5282d803207d6a,
-      type: 3}
-    m_TargetAsset: {fileID: 8214640680890962792, guid: 7d1cb99279e06544eb5282d803207d6a,
-      type: 3}
+    - default
+    m_MainAsset: {fileID: 102900000, guid: 182d1997ddaa448438e5aa90e45ef77f, type: 3}
+    m_TargetAsset: {fileID: 102900000, guid: 182d1997ddaa448438e5aa90e45ef77f, type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: db57d40281168114982ad985f866c991, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 9de9fe07304d6354a872378e6e3fb1de, type: 2}
-    - {fileID: 11400000, guid: 92e9030d86f6bbb4aa9ee6540d91ee8a, type: 2}
+    - {fileID: 11400000, guid: 083302307444fbd49a1d2b056ab3f0e4, type: 2}
+    - {fileID: 11400000, guid: 244a04517cad4b54fb4c96fb53e0ce42, type: 2}

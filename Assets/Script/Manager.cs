@@ -5,16 +5,22 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
 
-//https://www.youtube.com/watch?v=0tFnqBdO7NY
-//https://z0935323866.medium.com/unity-%E5%B0%8B%E5%9D%80%E5%BC%8F%E8%B3%87%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1addressable-assets-system-%E4%B8%80-bb1e99014a88
-//https://z0935323866.medium.com/unity-%E5%B0%8B%E5%9D%80%E5%BC%8F%E8%B3%87%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1addressable-assets-system-%E4%BA%8C-eb0e302fd4db
-//https://zhuanlan.zhihu.com/p/94572467
-/*
+/* 
+ 
 BuildTarget : 要建立的平台位置，這裡基本上不用到到，它會自動根據我們在BuildSetting設定的平台建立相對應的資料夾。
 LocalBuildPath、LocalLoadPath : 在本地端要儲存與載入的路徑。
 RemoteBuildPath、RemoteLoadPath : 在遠端儲存與載入的路徑。
 
 使用遠端測試 :PlayModfeScript -> Use Existing Build ,遠端模式必須要先build出一個bundle檔案出來才能測試。
+AddressableAssetSettings ->Build Remote Catalog 打勾
+參考:
+    https://www.youtube.com/watch?v=0tFnqBdO7NY
+    https://z0935323866.medium.com/unity-%E5%B0%8B%E5%9D%80%E5%BC%8F%E8%B3%87%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1addressable-assets-system-%E4%B8%80-bb1e99014a88
+    https://z0935323866.medium.com/unity-%E5%B0%8B%E5%9D%80%E5%BC%8F%E8%B3%87%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%B5%B1addressable-assets-system-%E4%BA%8C-eb0e302fd4db
+    https://zhuanlan.zhihu.com/p/94572467
+    https://wenrongdev.com/unity-addressable/ 
+
+*每次更新玩 務必 Addressables Groups-> Build-> Update a Previous Build ->AddressableAssetsData\Windows\addressables_content_state.bin*
  */
 
 public class Manager : MonoBehaviour
@@ -46,6 +52,7 @@ public class Manager : MonoBehaviour
         //使用 async
         //AsyncInstanctiate();
         LoadObjBtn.onClick.AddListener(CreateObjBtn);
+        
     }
 
     void OnAssetObjLoaded(AsyncOperationHandle<GameObject> asyncOperationHandle)//異步加載(一般來說如果在本地載入是不需要異步加載的，但是實際上我們不會知道物件是從本地還是遠端載入，所以乾脆都用異步)
@@ -54,6 +61,7 @@ public class Manager : MonoBehaviour
 
         isLoadSucc = true;//判斷加載結束
         assetObj = asyncOperationHandle.Result;//將載入好的物件存到AssetObj等待被使用。
+       // LoadMateral();//變更materal
     }
     //void OnAssetObjLoaded(AsyncOperationHandle<IList<GameObject>> asyncOperationHandle)//異步加載(一般來說如果在本地載入是不需要異步加載的，但是實際上我們不會知道物件是從本地還是遠端載入，所以乾脆都用異步)
     //{   //加載完之後會回傳一個帶有AsyncOperationHandle<GameObject>的事件給OnAssetObjLoaded
@@ -82,5 +90,20 @@ public class Manager : MonoBehaviour
         
 
 
+    }
+
+   void LoadMateral() {
+        string key = "G1Material";
+        string label = "cgMaterial";
+        Debug.Log(key + " " + label);
+       
+        //Addressables.LoadAssetAsync<Material>(Cgmaterial).Completed  += (obj) => { assetObj.GetComponent<Renderer>().material = obj.Result; };
+        Addressables.LoadAssetsAsync<Material>(new List<object> { key, label }, null, Addressables.MergeMode.Intersection).Completed += (obj)=> {
+            Debug.Log(assetObj.name);
+            assetObj.GetComponent<Renderer>().material = obj.Result[0];
+
+        };
+         
+       
     }
 }
